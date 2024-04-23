@@ -1,0 +1,15 @@
+function insertDashes(num) {
+    var strNum = num.toString();
+    var result = strNum[0];
+    for (var i = 1; i < strNum.length; i++) {
+        if (parseInt(strNum[i - 1]) % 2 === 0 && parseInt(strNum[i]) % 2 === 0) {
+            result += '-' + strNum[i];
+        } else {
+            result += strNum[i];
+        }
+    }
+    return result;
+}
+
+// Example usage
+console.log(insertDashes(025468)); // Output: 0-254-6-8
