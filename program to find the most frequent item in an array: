@@ -1,0 +1,24 @@
+function findMostFrequent(arr) {
+    var counts = {};
+    var maxCount = 0;
+    var mostFrequent;
+    
+    for (var i = 0; i < arr.length; i++) {
+        var item = arr[i];
+        if (counts[item]) {
+            counts[item]++;
+        } else {
+            counts[item] = 1;
+        }
+        if (counts[item] > maxCount) {
+            maxCount = counts[item];
+            mostFrequent = item;
+        }
+    }
+    
+    return mostFrequent + " ( " + maxCount + " times )";
+}
+
+// Example usage
+var arr1 = [3, 'a', 'a', 'a', 2, 3, 'a', 3, 'a', 2, 4, 9, 3];
+console.log(findMostFrequent(arr1)); // Output: a ( 5 times )
